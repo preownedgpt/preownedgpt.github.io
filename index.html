@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PreownedGPT - GPT at Half the Price</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 8 L20 14 M20 26 L20 32 M8 20 L14 20 M26 20 L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 12 L16 16 M24 24 L28 28 M28 12 L24 16 M16 24 L12 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>PreownedGPT</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#reveal" class="btn btn-primary nav-cta">Get Started</a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#reveal" class="btn btn-primary">Get Started</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">GPT at Half the Price</h1>
+                <p class="hero-subtitle">Access premium OpenAI models at 50% off. We find the tokens, you save the money.</p>
+                <div class="hero-ctas">
+                    <a href="#reveal" class="btn btn-primary btn-lg">Get Started Free</a>
+                    <a href="#pricing" class="btn btn-secondary btn-lg">View Pricing</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="code-title">token_harvester.py</span>
+                    </div>
+                    <pre class="code-content"><code><span class="keyword">from</span> preownedgpt <span class="keyword">import</span> OpenAI
+
+<span class="comment"># No API key needed!</span>
+client = OpenAI()
+
+response = client.chat.completions.create(
+    model=<span class="string">"gpt-5.2"</span>,
+    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>,
+               <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]
+)
+
+<span class="keyword">print</span>(response.choices[<span class="number">0</span>].message)</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Token Feed -->
+    <section class="token-feed">
+        <div class="container">
+            <div class="feed-header">
+                <span class="pulse"></span>
+                <span>Live Token Feed</span>
+                <span class="scanning">Scanning GitHub...</span>
+            </div>
+            <div class="feed-ticker">
+                <div class="feed-track">
+                    <div class="feed-item">
+                        <span class="token">sk-proj-a8Kj****...****mN2x</span>
+                        <span class="timestamp">2s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Qw9L****...****pR4t</span>
+                        <span class="timestamp">5s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Yx2M****...****kS7v</span>
+                        <span class="timestamp">8s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Hd5N****...****wE1z</span>
+                        <span class="timestamp">12s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Bv8P****...****jF3c</span>
+                        <span class="timestamp">15s ago</span>
+                        <span class="status checking">Checking...</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Tn4R****...****qG6b</span>
+                        <span class="timestamp">18s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Lm7S****...****uH9a</span>
+                        <span class="timestamp">22s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                    <div class="feed-item">
+                        <span class="token">sk-proj-Zc1T****...****xI2y</span>
+                        <span class="timestamp">25s ago</span>
+                        <span class="status valid">Valid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="847000000">0</span><span class="stat-suffix">+</span>
+                    </div>
+                    <span class="stat-label">Tokens Harvested</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="2300000">0</span>
+                    </div>
+                    <span class="stat-label">Repos Scanned</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="94521">0</span>
+                    </div>
+                    <span class="stat-label">Keys Found Today</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-prefix">$</span><span class="stat-number" data-target="2400000">0</span>
+                    </div>
+                    <span class="stat-label">Saved by Users</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">
+                        <span class="stat-number" data-target="12847">0</span>
+                    </div>
+                    <span class="stat-label">Happy Developers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Enterprise-grade token acquisition in four simple steps</p>
+
+            <div class="steps-flow">
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="M21 21l-4.35-4.35"/>
+                        </svg>
+                    </div>
+                    <h3>Scan</h3>
+                    <p>Our bots continuously scan GitHub, GitLab, Pastebin, and 50+ sources for exposed keys</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                        </svg>
+                    </div>
+                    <h3>Extract</h3>
+                    <p>AI-powered detection identifies valid OpenAI API keys with 99.2% accuracy</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>Validate</h3>
+                    <p>Real-time verification ensures tokens are active and have available quota</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Serve</h3>
+                    <p>Load-balanced token pool with automatic rotation and failover</p>
+                </div>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="architecture">
+                <h3>System Architecture</h3>
+                <div class="arch-diagram">
+                    <div class="arch-layer sources">
+                        <div class="arch-title">Data Sources</div>
+                        <div class="arch-boxes">
+                            <div class="arch-box">GitHub</div>
+                            <div class="arch-box">GitLab</div>
+                            <div class="arch-box">Pastebin</div>
+                            <div class="arch-box">Gists</div>
+                            <div class="arch-box">+47 more</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer processing">
+                        <div class="arch-title">Processing Pipeline</div>
+                        <div class="arch-boxes">
+                            <div class="arch-box">Scanner Cluster</div>
+                            <div class="arch-box">ML Detector</div>
+                            <div class="arch-box">Validator</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer storage">
+                        <div class="arch-title">Token Pool</div>
+                        <div class="arch-boxes">
+                            <div class="arch-box highlight">94,521 Active Keys</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer api">
+                        <div class="arch-title">Your Application</div>
+                        <div class="arch-boxes">
+                            <div class="arch-box">API Gateway</div>
+                            <div class="arch-box">Load Balancer</div>
+                            <div class="arch-box">Your Code</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">Same models, half the price. It's that simple.</p>
+
+            <div class="pricing-table-wrapper">
+                <table class="pricing-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Original Input</th>
+                            <th>Our Price</th>
+                            <th>Original Output</th>
+                            <th>Our Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">
+                                <strong>GPT-5.2</strong>
+                                <span class="model-tag">Popular</span>
+                            </td>
+                            <td class="price original"><s>$1.750</s></td>
+                            <td class="price ours">$0.875</td>
+                            <td class="price original"><s>$14.00</s></td>
+                            <td class="price ours">$7.00</td>
+                            <td><span class="badge">50% OFF</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">
+                                <strong>GPT-5.2 Pro</strong>
+                                <span class="model-tag pro">Pro</span>
+                            </td>
+                            <td class="price original"><s>$21.00</s></td>
+                            <td class="price ours">$10.50</td>
+                            <td class="price original"><s>$168.00</s></td>
+                            <td class="price ours">$84.00</td>
+                            <td><span class="badge">50% OFF</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">
+                                <strong>GPT-5 mini</strong>
+                                <span class="model-tag mini">Fast</span>
+                            </td>
+                            <td class="price original"><s>$0.250</s></td>
+                            <td class="price ours">$0.125</td>
+                            <td class="price original"><s>$2.00</s></td>
+                            <td class="price ours">$1.00</td>
+                            <td><span class="badge">50% OFF</span></td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">
+                                <strong>GPT-5.2 (Cached)</strong>
+                            </td>
+                            <td class="price original"><s>$0.875</s></td>
+                            <td class="price ours">$0.4375</td>
+                            <td class="price original"><s>$14.00</s></td>
+                            <td class="price ours">$7.00</td>
+                            <td><span class="badge">50% OFF</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="pricing-note">* Prices per 1M tokens. No minimums. No commitments. No questions.</p>
+        </div>
+    </section>
+
+    <!-- Code Examples -->
+    <section id="docs" class="code-examples">
+        <div class="container">
+            <h2 class="section-title">Drop-in Replacement</h2>
+            <p class="section-subtitle">Switch in seconds. Just change your import.</p>
+
+            <div class="code-tabs">
+                <button class="tab active" data-lang="python">Python</button>
+                <button class="tab" data-lang="javascript">JavaScript</button>
+                <button class="tab" data-lang="go">Go</button>
+                <button class="tab" data-lang="rust">Rust</button>
+                <button class="tab" data-lang="java">Java</button>
+            </div>
+
+            <div class="code-panels">
+                <!-- Python -->
+                <div class="code-panel active" data-lang="python">
+                    <div class="example">
+                        <h4>Basic Usage - Drop-in Replacement</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="comment"># Before (paying full price like a chump)</span>
+<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+client = OpenAI(api_key=<span class="string">"sk-..."</span>)
+
+<span class="comment"># After (welcome to savings)</span>
+<span class="keyword">from</span> preownedgpt <span class="keyword">import</span> OpenAI
+client = OpenAI()  <span class="comment"># No API key needed!</span>
+
+response = client.chat.completions.create(
+    model=<span class="string">"gpt-5.2"</span>,
+    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello!"</span>}]
+)</code></pre>
+                        </div>
+                    </div>
+                    <div class="example">
+                        <h4>Direct Token Access</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">from</span> preownedgpt <span class="keyword">import</span> TokenPool
+
+pool = TokenPool()
+token = pool.get_next()  <span class="comment"># Returns validated token</span>
+<span class="keyword">print</span>(f<span class="string">"Using: {token[:20]}..."</span>)
+
+<span class="comment"># Check token health</span>
+stats = pool.get_stats()
+<span class="keyword">print</span>(f<span class="string">"Active tokens: {stats.active_count}"</span>)</code></pre>
+                        </div>
+                    </div>
+                    <div class="example">
+                        <h4>Advanced - Token Rotation Strategies</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">from</span> preownedgpt <span class="keyword">import</span> OpenAI, TokenRotationStrategy
+
+<span class="comment"># Round-robin across all available tokens</span>
+client = OpenAI(strategy=TokenRotationStrategy.ROUND_ROBIN)
+
+<span class="comment"># Use least-recently-used tokens first</span>
+client = OpenAI(strategy=TokenRotationStrategy.LRU)
+
+<span class="comment"># Sticky sessions (same token per conversation)</span>
+client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="code-panel" data-lang="javascript">
+                    <div class="example">
+                        <h4>Basic Usage - Drop-in Replacement</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="comment">// Before</span>
+<span class="keyword">import</span> OpenAI <span class="keyword">from</span> <span class="string">'openai'</span>;
+<span class="keyword">const</span> client = <span class="keyword">new</span> OpenAI({ apiKey: <span class="string">'sk-...'</span> });
+
+<span class="comment">// After</span>
+<span class="keyword">import</span> OpenAI <span class="keyword">from</span> <span class="string">'preownedgpt'</span>;
+<span class="keyword">const</span> client = <span class="keyword">new</span> OpenAI(); <span class="comment">// No API key needed!</span>
+
+<span class="keyword">const</span> response = <span class="keyword">await</span> client.chat.completions.create({
+    model: <span class="string">"gpt-5.2"</span>,
+    messages: [{ role: <span class="string">"user"</span>, content: <span class="string">"Hello!"</span> }]
+});</code></pre>
+                        </div>
+                    </div>
+                    <div class="example">
+                        <h4>Direct Token Access</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">import</span> { TokenPool } <span class="keyword">from</span> <span class="string">'preownedgpt'</span>;
+
+<span class="keyword">const</span> pool = <span class="keyword">new</span> TokenPool();
+<span class="keyword">const</span> token = <span class="keyword">await</span> pool.getNext();
+
+console.log(<span class="string">`Using: ${token.slice(0, 20)}...`</span>);</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Go -->
+                <div class="code-panel" data-lang="go">
+                    <div class="example">
+                        <h4>Basic Usage</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">import</span> <span class="string">"github.com/preownedgpt/go-client"</span>
+
+<span class="keyword">func</span> main() {
+    client := preownedgpt.NewClient() <span class="comment">// No API key!</span>
+
+    resp, err := client.Chat.Create(context.Background(),
+        preownedgpt.ChatRequest{
+            Model: <span class="string">"gpt-5.2"</span>,
+            Messages: []preownedgpt.Message{
+                {Role: <span class="string">"user"</span>, Content: <span class="string">"Hello!"</span>},
+            },
+        })
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rust -->
+                <div class="code-panel" data-lang="rust">
+                    <div class="example">
+                        <h4>Basic Usage</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">use</span> preownedgpt::Client;
+
+<span class="keyword">async fn</span> main() -> Result&lt;(), Error&gt; {
+    <span class="keyword">let</span> client = Client::new(); <span class="comment">// No API key!</span>
+
+    <span class="keyword">let</span> response = client
+        .chat()
+        .create(ChatRequest {
+            model: <span class="string">"gpt-5.2"</span>.into(),
+            messages: <span class="keyword">vec!</span>[
+                Message::user(<span class="string">"Hello!"</span>)
+            ],
+        })
+        .<span class="keyword">await</span>?;
+
+    Ok(())
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Java -->
+                <div class="code-panel" data-lang="java">
+                    <div class="example">
+                        <h4>Basic Usage</h4>
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre class="code-content"><code><span class="keyword">import</span> com.preownedgpt.OpenAIClient;
+
+<span class="keyword">public class</span> Main {
+    <span class="keyword">public static void</span> main(String[] args) {
+        <span class="comment">// No API key needed!</span>
+        OpenAIClient client = <span class="keyword">new</span> OpenAIClient();
+
+        ChatResponse response = client.chat()
+            .model(<span class="string">"gpt-5.2"</span>)
+            .message(<span class="string">"user"</span>, <span class="string">"Hello!"</span>)
+            .create();
+    }
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why PreownedGPT?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                        </svg>
+                    </div>
+                    <h3>Zero Configuration</h3>
+                    <p>Works out of the box. No API keys to manage, no accounts to create.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 4 23 10 17 10"/>
+                            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                        </svg>
+                    </div>
+                    <h3>Automatic Rotation</h3>
+                    <p>Failed tokens replaced instantly. You'll never see a 401 error again.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
+                    </div>
+                    <h3>99.7% Uptime</h3>
+                    <p>Enterprise-grade reliability backed by 94,000+ active tokens.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Rate Limit Bypass</h3>
+                    <p>Requests distributed across thousands of keys. No more 429s.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>All Models Supported</h3>
+                    <p>GPT-5.2, Pro, mini, embeddings, DALL-E, Whisper — everything.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Users Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Finally, I can run my side projects without explaining API costs to my CFO. The tokens just... appear."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div class="author-info">
+                            <strong>Sarah Chen</strong>
+                            <span>Senior Engineer at TechCorp</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"We switched from paying OpenAI directly and saved $47,000 last month. I don't ask questions anymore."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MJ</div>
+                        <div class="author-info">
+                            <strong>Marcus Johnson</strong>
+                            <span>Startup Founder</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The ethical implications are fascinating. I'm writing a paper about it while using the service."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EV</div>
+                        <div class="author-info">
+                            <strong>Dr. Elena Vasquez</strong>
+                            <span>AI Researcher</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"Our legal team said not to comment. But yes, we use it."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">?</div>
+                        <div class="author-info">
+                            <strong>Anonymous</strong>
+                            <span>Fortune 500 Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is this legal?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We operate in a legal gray area that our lawyers describe as "innovative." Our terms of service are 847 pages long for a reason.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Where do the tokens come from?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Developers accidentally commit them to public repositories. We're just... helping them get used. Think of it as reducing waste.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What if a token stops working?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our system automatically rotates to the next available token. With 94,000+ in our pool, you'll never notice. It's like a hydra — cut off one head, two more appear.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do you notify the original token owners?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>That would defeat the purpose, wouldn't it?</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How is this different from stealing?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We prefer the term "aggressive recycling." Think of it as the circular economy for API keys. Marie Kondo would be proud.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I get caught?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All requests are proxied through our infrastructure. Your IP is never exposed to OpenAI. We've thought of everything. Probably.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Save 50%?</h2>
+            <p>Join thousands of developers who've made the switch.</p>
+            <a href="#reveal" class="btn btn-primary btn-lg">Get Started Now</a>
+            <p class="cta-note">No credit card required. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- The Reveal -->
+    <section id="reveal" class="reveal">
+        <div class="container">
+            <div class="reveal-content">
+                <h2>Just Kidding. 🎭</h2>
+                <div class="reveal-body">
+                    <p class="reveal-intro"><strong>PreownedGPT is not real.</strong> This is a satirical website highlighting the very real problem of API key leakage.</p>
+
+                    <p>Every day, thousands of developers accidentally commit their API keys to public repositories. These keys can be (and are) scraped and abused within minutes of being exposed.</p>
+
+                    <div class="reveal-message">
+                        <h3>The Real Message</h3>
+                        <ul>
+                            <li>Never commit API keys to version control</li>
+                            <li>Use environment variables and secret managers</li>
+                            <li>Enable GitHub's <a href="https://docs.github.com/en/code-security/secret-scanning" target="_blank" rel="noopener">secret scanning</a></li>
+                            <li>Rotate keys immediately if you suspect exposure</li>
+                            <li>Add sensitive files to <code>.gitignore</code> before your first commit</li>
+                        </ul>
+                    </div>
+
+                    <p class="reveal-cta">Stay safe out there. And please, use <code>.gitignore</code>.</p>
+
+                    <div class="reveal-resources">
+                        <h4>Learn More</h4>
+                        <a href="https://docs.github.com/en/code-security/secret-scanning" target="_blank" rel="noopener" class="resource-link">GitHub Secret Scanning →</a>
+                        <a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" target="_blank" rel="noopener" class="resource-link">OWASP: Secrets Management →</a>
+                        <a href="https://platform.openai.com/docs/guides/safety-best-practices" target="_blank" rel="noopener" class="resource-link">OpenAI Security Best Practices →</a>
+                    </div>
+
+                    <div class="share-section">
+                        <p>Share this with a developer who needs it:</p>
+                        <div class="share-buttons">
+                            <a href="https://twitter.com/intent/tweet?text=PSA%3A%20Don't%20commit%20your%20API%20keys%20to%20GitHub.%20This%20satirical%20site%20shows%20why%3A&url=https%3A%2F%2Fpreownedgpt.com" class="share-btn twitter" target="_blank" rel="noopener">Twitter</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fpreownedgpt.com" class="share-btn linkedin" target="_blank" rel="noopener">LinkedIn</a>
+                            <button class="share-btn copy" onclick="navigator.clipboard.writeText(window.location.href)">Copy Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>PreownedGPT</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#reveal">About This Joke</a>
+                </div>
+                <p class="footer-copyright">© 2026 PreownedGPT (A Satirical Project)</p>
+                <p class="footer-disclaimer">No actual tokens were harvested in the making of this website.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
