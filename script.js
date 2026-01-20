@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initSmoothScroll();
     initAnimatedCounters();
-    initLanguageTabs();
     initFAQAccordion();
     initTokenFeed();
 });
@@ -134,33 +133,6 @@ function initAnimatedCounters() {
     if (statsSection) {
         observer.observe(statsSection);
     }
-}
-
-/**
- * Language Tabs for Code Examples
- */
-function initLanguageTabs() {
-    const tabs = document.querySelectorAll('.code-tabs .tab');
-    const panels = document.querySelectorAll('.code-panel');
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const lang = tab.dataset.lang;
-
-            // Update active tab
-            tabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-
-            // Update active panel
-            panels.forEach(panel => {
-                if (panel.dataset.lang === lang) {
-                    panel.classList.add('active');
-                } else {
-                    panel.classList.remove('active');
-                }
-            });
-        });
-    });
 }
 
 /**
