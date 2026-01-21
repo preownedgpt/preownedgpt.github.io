@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
     <!-- Header/Navigation -->
     <header class="header">
         <nav class="nav container">
@@ -25,8 +28,8 @@
             <div class="nav-links-wrap">
                 <ul class="nav-links">
                     <li><a href="#how-it-works">How it Works</a></li>
+                    <li><a href="#demo">Demo</a></li>
                     <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#docs">Docs</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
@@ -43,8 +46,8 @@
         <div class="mobile-menu">
             <ul class="mobile-nav-links">
                 <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#docs">Docs</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#reveal" class="btn btn-primary">Get Started</a></li>
             </ul>
@@ -93,49 +96,51 @@ response = client.chat.completions.create(
             <div class="feed-header">
                 <span class="pulse"></span>
                 <span>Live Token Feed</span>
+                <span class="feed-counter"><span class="feed-count">94,521</span> keys in pool</span>
                 <span class="scanning">Scanning GitHub...</span>
             </div>
             <div class="feed-ticker">
-                <div class="feed-track">
-                    <div class="feed-item">
+                <div class="feed-track" id="feed-track">
+                    <div class="feed-item fresh" data-age="2">
+                        <span class="fresh-badge">FRESH</span>
                         <span class="token">sk-proj-a8Kj****...****mN2x</span>
                         <span class="timestamp">2s ago</span>
                         <span class="status valid">Valid</span>
                     </div>
-                    <div class="feed-item">
-                        <span class="token">sk-proj-Qw9L****...****pR4t</span>
+                    <div class="feed-item" data-age="5">
+                        <span class="token">sk-proj-Qw9LmRt****...****pR4t</span>
                         <span class="timestamp">5s ago</span>
                         <span class="status valid">Valid</span>
                     </div>
-                    <div class="feed-item">
-                        <span class="token">sk-proj-Yx2M****...****kS7v</span>
+                    <div class="feed-item" data-age="8">
+                        <span class="token">sk-live-Yx2M****...****kS7v</span>
                         <span class="timestamp">8s ago</span>
-                        <span class="status valid">Valid</span>
+                        <span class="status checking">Checking...</span>
                     </div>
-                    <div class="feed-item">
-                        <span class="token">sk-proj-Hd5N****...****wE1z</span>
+                    <div class="feed-item" data-age="12">
+                        <span class="token">sk-proj-Hd5NxBw****...****wE1z</span>
                         <span class="timestamp">12s ago</span>
                         <span class="status valid">Valid</span>
                     </div>
-                    <div class="feed-item">
+                    <div class="feed-item" data-age="15">
                         <span class="token">sk-proj-Bv8P****...****jF3c</span>
                         <span class="timestamp">15s ago</span>
-                        <span class="status checking">Checking...</span>
+                        <span class="status revoked">Revoked</span>
                     </div>
-                    <div class="feed-item">
-                        <span class="token">sk-proj-Tn4R****...****qG6b</span>
+                    <div class="feed-item" data-age="18">
+                        <span class="token">sk-live-Tn4RyKp****...****qG6b</span>
                         <span class="timestamp">18s ago</span>
                         <span class="status valid">Valid</span>
                     </div>
-                    <div class="feed-item">
+                    <div class="feed-item" data-age="22">
                         <span class="token">sk-proj-Lm7S****...****uH9a</span>
                         <span class="timestamp">22s ago</span>
                         <span class="status valid">Valid</span>
                     </div>
-                    <div class="feed-item">
-                        <span class="token">sk-proj-Zc1T****...****xI2y</span>
+                    <div class="feed-item" data-age="25">
+                        <span class="token">sk-proj-Zc1TvNm****...****xI2y</span>
                         <span class="timestamp">25s ago</span>
-                        <span class="status valid">Valid</span>
+                        <span class="status checking">Checking...</span>
                     </div>
                 </div>
             </div>
@@ -146,35 +151,40 @@ response = client.chat.completions.create(
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <div class="stat-item animate-on-scroll" data-delay="0">
                     <div class="stat-value">
                         <span class="stat-number" data-target="847000000">0</span><span class="stat-suffix">+</span>
                     </div>
                     <span class="stat-label">Tokens Harvested</span>
+                    <span class="stat-updated">Updated 2s ago</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item animate-on-scroll" data-delay="50">
                     <div class="stat-value">
                         <span class="stat-number" data-target="2300000">0</span>
                     </div>
                     <span class="stat-label">Repos Scanned</span>
+                    <span class="stat-updated">Updated 5s ago</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item animate-on-scroll" data-delay="100">
                     <div class="stat-value">
                         <span class="stat-number" data-target="94521">0</span>
                     </div>
                     <span class="stat-label">Keys Found Today</span>
+                    <span class="stat-updated">Updated 1s ago</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item animate-on-scroll" data-delay="150">
                     <div class="stat-value">
                         <span class="stat-prefix">$</span><span class="stat-number" data-target="2400000">0</span>
                     </div>
                     <span class="stat-label">Saved by Users</span>
+                    <span class="stat-updated">Updated 8s ago</span>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item animate-on-scroll" data-delay="200">
                     <div class="stat-value">
                         <span class="stat-number" data-target="12847">0</span>
                     </div>
                     <span class="stat-label">Happy Developers</span>
+                    <span class="stat-updated">Updated 3s ago</span>
                 </div>
             </div>
         </div>
@@ -183,11 +193,11 @@ response = client.chat.completions.create(
     <!-- How It Works -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <p class="section-subtitle">Enterprise-grade token acquisition in four simple steps</p>
+            <h2 class="section-title animate-on-scroll">How It Works</h2>
+            <p class="section-subtitle animate-on-scroll">Enterprise-grade token acquisition in four simple steps</p>
 
             <div class="steps-flow">
-                <div class="step">
+                <div class="step animate-on-scroll" data-delay="0">
                     <div class="step-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="8"/>
@@ -197,8 +207,11 @@ response = client.chat.completions.create(
                     <h3>Scan</h3>
                     <p>Our bots continuously scan GitHub, GitLab, Pastebin, and 50+ sources for exposed keys</p>
                 </div>
-                <div class="step-arrow">→</div>
-                <div class="step">
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                <div class="step animate-on-scroll" data-delay="100">
                     <div class="step-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -210,8 +223,11 @@ response = client.chat.completions.create(
                     <h3>Extract</h3>
                     <p>AI-powered detection identifies valid OpenAI API keys with 99.2% accuracy</p>
                 </div>
-                <div class="step-arrow">→</div>
-                <div class="step">
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                <div class="step animate-on-scroll" data-delay="200">
                     <div class="step-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -221,8 +237,11 @@ response = client.chat.completions.create(
                     <h3>Validate</h3>
                     <p>Real-time verification ensures tokens are active and have available quota</p>
                 </div>
-                <div class="step-arrow">→</div>
-                <div class="step">
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <div class="connector-dot"></div>
+                </div>
+                <div class="step animate-on-scroll" data-delay="300">
                     <div class="step-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -235,37 +254,204 @@ response = client.chat.completions.create(
                 </div>
             </div>
 
-            <!-- Architecture Diagram -->
-            <div class="architecture">
-                <h3>System Architecture</h3>
-                <div class="arch-diagram">
-                    <div class="arch-layer sources">
-                        <div class="arch-title">Data Sources</div>
-                        <div class="arch-boxes">
-                            <div class="arch-box">GitHub</div>
-                            <div class="arch-box">GitLab</div>
-                            <div class="arch-box">Pastebin</div>
-                            <div class="arch-box">Gists</div>
-                            <div class="arch-box">+47 more</div>
+            <!-- Detailed Pipeline Breakdown -->
+            <div class="pipeline-details">
+                <div class="pipeline-stage animate-on-scroll">
+                    <div class="pipeline-header">
+                        <div class="pipeline-number">01</div>
+                        <h3>Token Discovery</h3>
+                        <div class="pipeline-stats">
+                            <span class="stat-pill"><span class="stat-pill-value" data-count="2300000">0</span> repos/day</span>
+                            <span class="stat-pill">47 data sources</span>
                         </div>
                     </div>
-                    <div class="arch-arrow">↓</div>
+                    <div class="pipeline-content">
+                        <p>Our distributed scanner network monitors GitHub's commit stream in real-time, processing over 2.3 million repositories daily. Using regex patterns trained on 50,000+ leaked keys, we identify exposed credentials within seconds of being pushed—often before GitHub's own secret scanning can flag them.</p>
+                        <div class="pipeline-features">
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Pattern matching for <code>sk-proj-*</code>, <code>sk-live-*</code> formats</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Monitoring GitHub, GitLab, Pastebin, Discord leaks, Stack Overflow</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Average detection latency: <strong>4.2 seconds</strong> from commit</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pipeline-stage animate-on-scroll">
+                    <div class="pipeline-header">
+                        <div class="pipeline-number">02</div>
+                        <h3>Extraction Pipeline</h3>
+                        <div class="pipeline-stats">
+                            <span class="stat-pill">99.2% accuracy</span>
+                            <span class="stat-pill">500K+ training samples</span>
+                        </div>
+                    </div>
+                    <div class="pipeline-content">
+                        <p>Not every key-like string is valid. Our ML classifier, trained on 500K+ confirmed API keys, filters false positives with 99.2% accuracy. We detect test keys, expired formats, and honeypots, ensuring only real, usable tokens enter the pool.</p>
+                        <div class="pipeline-features">
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>ML model trained on 500K+ leaked keys</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>False positive filtering (test keys, expired formats, honeypots)</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Deduplication against existing pool</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pipeline-stage animate-on-scroll">
+                    <div class="pipeline-header">
+                        <div class="pipeline-number">03</div>
+                        <h3>Validation Engine</h3>
+                        <div class="pipeline-stats">
+                            <span class="stat-pill">60s health checks</span>
+                            <span class="stat-pill">3 tier detection</span>
+                        </div>
+                    </div>
+                    <div class="pipeline-content">
+                        <p>Every key undergoes real-time validation. We make minimal API calls to verify quota availability, detect rate limits, and identify the organization tier. Keys are continuously monitored—checked every 60 seconds—and retired the moment they become invalid.</p>
+                        <div class="pipeline-features">
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Quota verification via minimal API calls</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Organization tier identification (Free/Plus/Enterprise)</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Continuous health monitoring every 60 seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pipeline-stage animate-on-scroll">
+                    <div class="pipeline-header">
+                        <div class="pipeline-number">04</div>
+                        <h3>Pool Management</h3>
+                        <div class="pipeline-stats">
+                            <span class="stat-pill"><span class="stat-pill-value pool-counter" data-count="94521">0</span> active keys</span>
+                            <span class="stat-pill">Smart routing</span>
+                        </div>
+                    </div>
+                    <div class="pipeline-content">
+                        <p>Our token pool uses intelligent load balancing to distribute requests across 94,000+ active keys. Automatic rotation prevents any single key from being over-utilized, while sticky sessions maintain conversation context across requests.</p>
+                        <div class="pipeline-features">
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Load balancing across key pool</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Automatic failover and rotation</span>
+                            </div>
+                            <div class="pipeline-feature">
+                                <span class="feature-bullet"></span>
+                                <span>Sticky sessions for conversation continuity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="architecture animate-on-scroll">
+                <h3>System Architecture</h3>
+                <div class="arch-diagram">
+                    <div class="arch-layer sources" data-expandable>
+                        <div class="arch-title">
+                            Data Sources
+                            <span class="arch-live-stat">Scanning <span class="commits-counter">847</span> commits/min</span>
+                        </div>
+                        <div class="arch-boxes">
+                            <div class="arch-box" data-source="github">
+                                <svg class="arch-box-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                GitHub
+                            </div>
+                            <div class="arch-box" data-source="gitlab">
+                                <svg class="arch-box-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 01-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 014.82 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.49h8.1l2.44-7.51A.42.42 0 0118.6 2a.43.43 0 01.58 0 .42.42 0 01.11.18l2.44 7.51L23 13.45a.84.84 0 01-.35.94z"/></svg>
+                                GitLab
+                            </div>
+                            <div class="arch-box" data-source="pastebin">
+                                <svg class="arch-box-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                                Pastebin
+                            </div>
+                            <div class="arch-box" data-source="discord">
+                                <svg class="arch-box-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 00-.041-.106 13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.892.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.03z"/></svg>
+                                Discord
+                            </div>
+                            <div class="arch-box more-sources">+43 more</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">
+                        <div class="arch-arrow-line"></div>
+                        <div class="arch-arrow-particles">
+                            <span class="particle"></span>
+                            <span class="particle"></span>
+                            <span class="particle"></span>
+                        </div>
+                    </div>
                     <div class="arch-layer processing">
                         <div class="arch-title">Processing Pipeline</div>
                         <div class="arch-boxes">
-                            <div class="arch-box">Scanner Cluster</div>
-                            <div class="arch-box">ML Detector</div>
-                            <div class="arch-box">Validator</div>
+                            <div class="arch-box">
+                                <span class="arch-box-label">Scanner Cluster</span>
+                                <span class="arch-box-stat">12 nodes</span>
+                            </div>
+                            <div class="arch-box">
+                                <span class="arch-box-label">ML Detector</span>
+                                <span class="arch-box-stat">v3.2.1</span>
+                            </div>
+                            <div class="arch-box">
+                                <span class="arch-box-label">Validator</span>
+                                <span class="arch-box-stat">99.7% uptime</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="arch-arrow">↓</div>
+                    <div class="arch-arrow">
+                        <div class="arch-arrow-line"></div>
+                        <div class="arch-arrow-particles">
+                            <span class="particle"></span>
+                            <span class="particle"></span>
+                            <span class="particle"></span>
+                        </div>
+                    </div>
                     <div class="arch-layer storage">
                         <div class="arch-title">Token Pool</div>
                         <div class="arch-boxes">
-                            <div class="arch-box highlight">94,521 Active Keys</div>
+                            <div class="arch-box highlight pool-box">
+                                <span class="pool-count" data-count="94521">94,521</span> Active Keys
+                                <div class="pool-breakdown">
+                                    <span class="pool-tier">Free: 45K</span>
+                                    <span class="pool-tier">Plus: 32K</span>
+                                    <span class="pool-tier">Enterprise: 17K</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="arch-arrow">↓</div>
+                    <div class="arch-arrow">
+                        <div class="arch-arrow-line"></div>
+                        <div class="arch-arrow-particles">
+                            <span class="particle"></span>
+                            <span class="particle"></span>
+                            <span class="particle"></span>
+                        </div>
+                    </div>
                     <div class="arch-layer api">
                         <div class="arch-title">Your Application</div>
                         <div class="arch-boxes">
@@ -275,6 +461,54 @@ response = client.chat.completions.create(
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Try It Now</h2>
+            <p class="section-subtitle animate-on-scroll">See PreownedGPT in action. Click to start the demo.</p>
+
+            <div class="demo-terminal animate-on-scroll">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">PreownedGPT Terminal</span>
+                    <div class="terminal-status">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Ready</span>
+                    </div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-output" id="terminal-output">
+                        <div class="terminal-line prompt">
+                            <span class="prompt-symbol">$</span>
+                            <span class="terminal-cursor blink"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal-actions">
+                    <button class="btn btn-primary demo-start-btn" id="demo-start-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="play-icon">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Run Demo
+                    </button>
+                    <button class="btn btn-secondary demo-reset-btn" id="demo-reset-btn" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="reset-icon">
+                            <polyline points="1 4 1 10 7 10"></polyline>
+                            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+                        </svg>
+                        Reset
+                    </button>
+                </div>
+            </div>
+
+            <div class="demo-disclaimer">
+                <p>This is a simulated demo. No actual API calls are made.</p>
             </div>
         </div>
     </section>
@@ -426,9 +660,9 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
     <!-- Features Grid -->
     <section class="features">
         <div class="container">
-            <h2 class="section-title">Why PreownedGPT?</h2>
+            <h2 class="section-title animate-on-scroll">Why PreownedGPT?</h2>
             <div class="features-grid">
-                <div class="feature">
+                <div class="feature animate-on-scroll" data-delay="0">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
@@ -438,7 +672,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                     <h3>Zero Configuration</h3>
                     <p>Works out of the box. No API keys to manage, no accounts to create.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll" data-delay="50">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <polyline points="23 4 23 10 17 10"/>
@@ -448,7 +682,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                     <h3>Automatic Rotation</h3>
                     <p>Failed tokens replaced instantly. You'll never see a 401 error again.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll" data-delay="100">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
@@ -458,7 +692,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                     <h3>99.7% Uptime</h3>
                     <p>Enterprise-grade reliability backed by 94,000+ active tokens.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll" data-delay="150">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -467,7 +701,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                     <h3>Rate Limit Bypass</h3>
                     <p>Requests distributed across thousands of keys. No more 429s.</p>
                 </div>
-                <div class="feature">
+                <div class="feature animate-on-scroll" data-delay="200">
                     <div class="feature-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
@@ -485,9 +719,9 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
     <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title">What Our Users Say</h2>
+            <h2 class="section-title animate-on-scroll">What Our Users Say</h2>
             <div class="testimonials-grid">
-                <div class="testimonial">
+                <div class="testimonial animate-on-scroll" data-delay="0">
                     <div class="testimonial-content">
                         <p>"Finally, I can run my side projects without explaining API costs to my CFO. The tokens just... appear."</p>
                     </div>
@@ -499,7 +733,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial animate-on-scroll" data-delay="100">
                     <div class="testimonial-content">
                         <p>"We switched from paying OpenAI directly and saved $47,000 last month. I don't ask questions anymore."</p>
                     </div>
@@ -511,7 +745,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial animate-on-scroll" data-delay="200">
                     <div class="testimonial-content">
                         <p>"The ethical implications are fascinating. I'm writing a paper about it while using the service."</p>
                     </div>
@@ -523,7 +757,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         </div>
                     </div>
                 </div>
-                <div class="testimonial">
+                <div class="testimonial animate-on-scroll" data-delay="300">
                     <div class="testimonial-content">
                         <p>"Our legal team said not to comment. But yes, we use it."</p>
                     </div>
@@ -542,9 +776,9 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
     <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title animate-on-scroll">Frequently Asked Questions</h2>
             <div class="faq-list">
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll" data-delay="0">
                     <button class="faq-question">
                         Is this legal?
                         <span class="faq-icon">+</span>
@@ -553,7 +787,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         <p>We operate in a legal gray area that our lawyers describe as "innovative."</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll" data-delay="50">
                     <button class="faq-question">
                         Where do the tokens come from?
                         <span class="faq-icon">+</span>
@@ -562,7 +796,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         <p>Developers accidentally commit them to public repositories. We're just... helping them get used. Think of it as reducing waste.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll" data-delay="100">
                     <button class="faq-question">
                         What if a token stops working?
                         <span class="faq-icon">+</span>
@@ -571,7 +805,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         <p>Our system automatically rotates to the next available token. With 94,000+ in our pool, you'll never notice. It's like a hydra — cut off one head, two more appear.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll" data-delay="150">
                     <button class="faq-question">
                         Do you notify the original token owners?
                         <span class="faq-icon">+</span>
@@ -580,7 +814,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         <p>That would defeat the purpose, wouldn't it?</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll" data-delay="200">
                     <button class="faq-question">
                         How is this different from stealing?
                         <span class="faq-icon">+</span>
@@ -589,7 +823,7 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                         <p>We prefer the term "aggressive recycling." Think of it as the circular economy for API keys. Marie Kondo would be proud.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item animate-on-scroll" data-delay="250">
                     <button class="faq-question">
                         Can I get caught?
                         <span class="faq-icon">+</span>
@@ -614,13 +848,97 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
 
     <!-- The Reveal -->
     <section id="reveal" class="reveal">
+        <div class="reveal-glow"></div>
         <div class="container">
             <div class="reveal-content">
-                <h2>Just Kidding. 🎭</h2>
+                <h2 class="reveal-title">Just Kidding.</h2>
                 <div class="reveal-body">
                     <p class="reveal-intro"><strong>PreownedGPT is not real.</strong> This is a satirical website highlighting the very real problem of API key leakage.</p>
 
-                    <p>Every day, thousands of developers accidentally commit their API keys to public repositories. These keys can be (and are) scraped and abused within minutes of being exposed.</p>
+                    <p class="reveal-text">Every day, thousands of developers accidentally commit their API keys to public repositories. These keys can be (and are) scraped and abused within minutes of being exposed.</p>
+
+                    <!-- Code Comparison Examples -->
+                    <div class="code-comparison">
+                        <div class="comparison-card bad">
+                            <div class="comparison-header">
+                                <span class="comparison-icon">✗</span>
+                                <span class="comparison-label">Don't do this</span>
+                            </div>
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="code-title">app.py</span>
+                                </div>
+                                <pre class="code-content"><code><span class="comment"># Hardcoded in source</span>
+<span class="variable">api_key</span> = <span class="string">"sk-proj-abc123..."</span>
+<span class="variable">client</span> = OpenAI(<span class="variable">api_key</span>=<span class="variable">api_key</span>)</code></pre>
+                            </div>
+                            <p class="comparison-caption">Keys in code = keys exposed</p>
+                        </div>
+                        <div class="comparison-card good">
+                            <div class="comparison-header">
+                                <span class="comparison-icon">✓</span>
+                                <span class="comparison-label">Do this instead</span>
+                            </div>
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="code-title">app.py</span>
+                                </div>
+                                <pre class="code-content"><code><span class="comment"># Use environment variables</span>
+<span class="keyword">import</span> os
+<span class="variable">client</span> = OpenAI(
+    <span class="variable">api_key</span>=os.environ[<span class="string">"OPENAI_API_KEY"</span>]
+)</code></pre>
+                            </div>
+                            <p class="comparison-caption">Environment variables keep secrets safe</p>
+                        </div>
+                    </div>
+
+                    <div class="code-comparison">
+                        <div class="comparison-card bad">
+                            <div class="comparison-header">
+                                <span class="comparison-icon">✗</span>
+                                <span class="comparison-label">Don't do this</span>
+                            </div>
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="code-title">terminal</span>
+                                </div>
+                                <pre class="code-content"><code><span class="comment"># Commit .env files</span>
+<span class="keyword">$</span> git add .
+<span class="keyword">$</span> git commit -m <span class="string">"initial commit"</span>
+<span class="comment"># .env is now public!</span></code></pre>
+                            </div>
+                            <p class="comparison-caption">Your secrets are now on GitHub</p>
+                        </div>
+                        <div class="comparison-card good">
+                            <div class="comparison-header">
+                                <span class="comparison-icon">✓</span>
+                                <span class="comparison-label">Do this instead</span>
+                            </div>
+                            <div class="code-window">
+                                <div class="code-header">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                    <span class="code-title">terminal</span>
+                                </div>
+                                <pre class="code-content"><code><span class="comment"># Use .gitignore FIRST</span>
+<span class="keyword">$</span> <span class="keyword">echo</span> <span class="string">".env"</span> >> .gitignore
+<span class="keyword">$</span> git add .gitignore
+<span class="keyword">$</span> git commit -m <span class="string">"add gitignore"</span></code></pre>
+                            </div>
+                            <p class="comparison-caption">Protected before you start</p>
+                        </div>
+                    </div>
 
                     <div class="reveal-message">
                         <h3>The Real Message</h3>
@@ -669,7 +987,6 @@ client = OpenAI(strategy=TokenRotationStrategy.STICKY)</code></pre>
                 <div class="footer-links">
                     <a href="#reveal">About This Joke</a>
                 </div>
-                <p class="footer-copyright">© 2026 PreownedGPT (A Satirical Project)</p>
                 <p class="footer-disclaimer">No actual tokens were harvested in the making of this website.</p>
             </div>
         </div>
