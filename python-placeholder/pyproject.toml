@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "preownedgpt"
-version = "0.0.1"
+version = "0.0.2"
 description = "Placeholder package that redirects to the PreownedGPT website."
 readme = "README.md"
 requires-python = ">=3.8"

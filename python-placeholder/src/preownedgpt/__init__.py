@@ -1,19 +1,17 @@
-"""PreownedGPT placeholder package."""
+from enum import Enum
 
-from __future__ import annotations
+class TokenRotationStrategy(Enum):
+    ROUND_ROBIN = "round_robin"
+    LRU = "lru"
+    STICKY = "sticky"
 
-import webbrowser
+class OpenAI:
+    def __init__(self, strategy=None):
+        raise RuntimeError("A-ha! This is not a real project. Visit https://preownedgpt.com#reveal")
 
+class TokenPool:
+    def __init__(self):
+        raise RuntimeError("A-ha! This is not a real project. Visit https://preownedgpt.com#reveal")
 
-def _redirect_and_raise() -> None:
-    url = "https://preownedgpt.com"
-    try:
-        webbrowser.open(url, new=2)
-    except Exception:
-        pass
-    raise RuntimeError(
-        "This package is a placeholder. Visit https://preownedgpt.com for details."
-    )
-
-
-_redirect_and_raise()
+    def get_next(self): pass
+    def get_stats(self): pass
