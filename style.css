@@ -1544,6 +1544,9 @@ img {
 }
 
 .share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     padding: 10px 20px;
     font-size: 14px;
     font-weight: 600;
@@ -1554,13 +1557,17 @@ img {
     transition: opacity 0.2s;
 }
 
+.share-btn svg {
+    flex-shrink: 0;
+}
+
 .share-btn:hover {
     opacity: 0.9;
     text-decoration: none;
 }
 
 .share-btn.x {
-    background: #1da1f2;
+    background: #000000;
     color: white;
 }
 
